@@ -2,9 +2,9 @@
 
 namespace Sorts.SortType
 {
-  public class BogoSort : ISort
+  public class BogoSort : BaseSort
   {
-    public int[] Execute(int[] array)
+    public override int[] Execute(int[] array)
     {
       while (!IsSorted(array)) array = RandomPermutation(array);
       return array;
@@ -28,7 +28,7 @@ namespace Sorts.SortType
       {
         n--;
         int i = random.Next(n + 1);
-        (array[i], array[n]) = (array[n], array[i]);
+        Swap(ref array[i], ref array[n]);
       }
 
       return array;

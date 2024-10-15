@@ -1,8 +1,8 @@
 ﻿namespace Sorts.SortType
 {
-  public class BubbleSort : ISort
+  public class BubbleSort : BaseSort
   {
-    public int[] Execute(int[] array)
+    public override int[] Execute(int[] array)
     {
       int length = array.Length;
 
@@ -12,11 +12,6 @@
           Swap(ref array[j], ref array[j + 1]);
 
       return array;
-    }
-
-    private static void Swap(ref int i, ref int j)
-    {
-      (i, j) = (j, i);
     }
   }
 }
